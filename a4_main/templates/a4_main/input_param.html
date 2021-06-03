@@ -5,6 +5,18 @@ input
 {% endblock %}
 
 {% block content %}
-    <h1>First page</h1>
-    <p>Parameters entry</p>
+    <h1>
+        Input Parameters
+    </h1>
+    <form method="post">
+        <input type="text" placeholder="Enter a set of letters or a word:"
+               class="form-control">
+        <input type="" placeholder="Enter the minimum number of letters in the word:"
+               class="form-control">
+        <input type="" placeholder="Enter the maximum number of letters in the word:"
+               class="form-control">
+        <button type="submit" class="btn btn-success">
+            Create names
+        </button>
+    </form>
 {% endblock %}
