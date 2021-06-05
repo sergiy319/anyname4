@@ -9,13 +9,12 @@ input
         Input Parameters
     </h1>
     <form method="post">
-        <input type="text" placeholder="Enter a set of letters or a word:"
-               class="form-control">
-        <input type="" placeholder="Enter the minimum number of letters in the word:"
-               class="form-control">
-        <input type="" placeholder="Enter the maximum number of letters in the word:"
-               class="form-control">
+        {% csrf_token %}
+        {{ form.user_letters_set }}<br>
+        {{ form.min_number_letters_in_word }}<br>
+        {{ form.max_number_letters_in_word }}<br>
         <button type="submit" class="btn btn-success">
+        <span>{{ error }}</span>
             Create names
         </button>
     </form>
