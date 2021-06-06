@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import User_String_Handling_Form
+from .models import User_String_Handling
 
 
 # Create a method to enter a string of values.
@@ -23,4 +24,8 @@ def input_param(request):
 
 # We create a method for showing variants and meanings of words.
 def output_result(request):
-    return render(request, 'a4_main/output_result.html')
+    output_models_data = User_String_Handling.objects.all()
+    return render(request, 'a4_main/output_result.html', {
+        'title': 'output',
+        'output_models_data': output_models_data
+    })

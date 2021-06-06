@@ -1,10 +1,18 @@
 {% extends 'a4_main/base.html' %}
 
 {% block title %}
-output
+{{ title }}
 {% endblock %}
 
 {% block content %}
-    <h1>Second page</h1>
-    <p>Variants and meanings of words</p>
+    {% for el in output_models_data %}
+        <div class="alert alert-warning mt-2">
+            <h3>
+                {{ el.title }}
+            </h3>
+            <p>
+                {{ el.output_models_data }}
+            </p>
+        </div>
+    {% endfor %}
 {% endblock %}
