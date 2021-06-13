@@ -29,6 +29,3 @@ def names_range_number_letters(users_input, minimum_letters, maximum_letters):
     any_names_variants = [names_combinations(users_input, words_amount)
                           for words_amount in range(minimum_letters, maximum_letters + 1)]
     return any_names_variants
-
-
-print(names_range_number_letters('aexx', 3, 4))
