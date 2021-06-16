@@ -18,14 +18,20 @@ from itertools import permutations
 #
 # names_combinations('Alexander', 5)
 
-
-def names_combinations(users_input, words_amount):
+# Create a function to sort a word with one given length.
+def letters_permutation(users_input, words_amount):
     names_variants = sorted(list(set([''.join(name_variant).capitalize()
-                                      for name_variant in permutations(users_input, words_amount)])))
+                                      for name_variant
+                                      in permutations(users_input, words_amount)])))
     return names_variants
 
 
-def names_range_number_letters(users_input, minimum_letters, maximum_letters):
-    any_names_variants = [names_combinations(users_input, words_amount)
-                          for words_amount in range(minimum_letters, maximum_letters + 1)]
-    return any_names_variants
+# Create a function to sort words with a range of preset lengths.
+def letters_permutation_range(users_input, min_amount, max_amount):
+    names_variants = [letters_permutation(users_input, words_amount)
+                      for words_amount in range(min_amount, max_amount + 1)]
+    return names_variants
+
+
+print(letters_permutation('bfFf', 4))
+print(letters_permutation_range('axXx', 3, 4))
